@@ -1,39 +1,26 @@
 const express = require('express');
-const fs = require('fs');
-const path = require('path');
 const router = express.Router();
+const Career = require('../models/Career');
+const verifyToken = require('../middleware/authMiddleware');
 
-const careersFilePath = path.join(__dirname, '../data/careers.json');
-
-const getCareers = () => {
-    if (!fs.existsSync(careersFilePath)) return [];
+// GET / - List all careers
+router.get('/', async (req, res) => {
     try {
-        const data = fs.readFileSync(careersFilePath);
-        return JSON.parse(data);
-    } catch (e) {
-        return [];
+        const careers = await Career.find();
+        res.json(careers);
+    } catch (err) {
+        res.status(500).json({ message: 'Error fetching careers' });
     }
-};
-
-router.get('/paths', (req, res) => {
-    const careers = getCareers();
-    const { field } = req.query;
-    if (field) {
-        // Simple filter logic
-        const filtered = careers.filter(c =>
-            c.title.toLowerCase().includes(field.toLowerCase()) ||
-            c.description.toLowerCase().includes(field.toLowerCase())
-        );
-        return res.send(filtered);
-    }
-    res.send(careers);
 });
 
-router.get('/details/:id', (req, res) => {
-    const careers = getCareers();
-    const career = careers.find(c => c.id === req.params.id);
-    if (career) res.send(career);
-    else res.status(404).send({ message: 'Career not found' });
+// GET /:id - Get career details
+router.get('/:id', async (req, res) => {
+    try {
+        const career = await Career.findById(req.params.id);
+        if (!career) return res.status(404).json({ message: 'Career not found' });
+        res.json(career);
+    } catch (err) {
+        res.status(500).json({ message: 'Error fetching career details' });
+    }
 });
-
 module.exports = router;

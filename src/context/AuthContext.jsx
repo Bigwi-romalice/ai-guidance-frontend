@@ -32,7 +32,11 @@ export const AuthProvider = ({ children }) => {
       setUser(userData);
     } catch (err) {
       console.error('Failed to load user profile:', err);
-      localStorage.removeItem('auth_token');
+      // Only clear token if it's an authorization error
+      if (err.message && (err.message.includes('401') || err.message.includes('Unauthorized'))) {
+        localStorage.removeItem('auth_token');
+        apiService.clearToken();
+      }
     } finally {
       setLoading(false);
     }
@@ -42,9 +46,9 @@ export const AuthProvider = ({ children }) => {
     try {
       setError(null);
       setLoading(true);
-      
+
       const response = await apiService.login(email, password);
-      
+
       if (response.token) {
         apiService.setToken(response.token);
         setUser(response.user);
@@ -62,9 +66,9 @@ export const AuthProvider = ({ children }) => {
     try {
       setError(null);
       setLoading(true);
-      
+
       const response = await apiService.register(userData);
-      
+
       if (response.token) {
         apiService.setToken(response.token);
         setUser(response.user);

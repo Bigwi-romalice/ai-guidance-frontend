@@ -1,6 +1,11 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+require('dotenv').config();
+const connectDB = require('./config/db');
+
+// Connect Database
+connectDB();
 const authRoutes = require('./routes/authRoutes');
 const chatRoutes = require('./routes/chatRoutes');
 const academicRoutes = require('./routes/academicRoutes');

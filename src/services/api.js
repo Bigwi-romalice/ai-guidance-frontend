@@ -38,7 +38,10 @@ class ApiService {
     };
 
     try {
-      console.log(`[DEBUG] API Request to: ${this.baseURL}${endpoint}`, options);
+      console.log(`[DEBUG] API Request to: ${this.baseURL}${endpoint}`, {
+        method: options.method || 'GET',
+        hasAuthHeader: !!headers.Authorization
+      });
       const response = await fetch(`${this.baseURL}${endpoint}`, {
         ...options,
         headers,

@@ -14,6 +14,7 @@ import AssessmentLauncher from './AssessmentLauncher';
 import AssessmentQuiz from './AssessmentQuiz';
 import AssessmentResults from './AssessmentResults';
 import AdminDashboard from './AdminDashboard';
+import About from './About';
 import { useAuth } from '../context/AuthContext';
 import './Dashboard.css';
 
@@ -30,21 +31,25 @@ const Dashboard = ({ onLogout }) => {
 
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  const [activeView, setActiveView] = useState('chat'); // 'chat' | 'career' | 'academic' | 'learning' | 'profile' | 'analytics' | 'assessment'
+  const [activeView, setActiveView] = useState('chat'); // 'chat' | 'career' | 'academic' | 'learning' | 'profile' | 'analytics' | 'assessment' | 'about'
 
   // Assessment State
   const [assessmentStep, setAssessmentStep] = useState('launcher'); // 'launcher' | 'quiz' | 'results'
   const [currentAssessmentId, setCurrentAssessmentId] = useState(null);
   const [assessmentResult, setAssessmentResult] = useState(null);
 
-  const handleSendMessage = (message) => {
-    if (!message.trim()) return;
+  const handleSendMessage = (message, file = null) => {
+    if (!message.trim() && !file) return;
+
+    const displayMsg = file
+      ? (message ? `${message}\n\n📎 Attached file: ${file.name}` : `📎 Attached file: ${file.name}`)
+      : message;
 
     // Add user message
     const userMessage = {
       id: Date.now(),
       type: 'user',
-      text: message,
+      text: displayMsg,
       time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     };
 
@@ -63,6 +68,23 @@ const Dashboard = ({ onLogout }) => {
         };
         setMessages(prev => [...prev, botMessage]);
         setIsTyping(false);
+
+        // Automatic View Switching based on response or command
+        const respLower = data.response.toLowerCase();
+        const msgLower = message.toLowerCase();
+
+        if (respLower.includes('opening the analytics') || msgLower.includes('open analytics')) {
+          setActiveView('analytics');
+        } else if (respLower.includes('opening the assessment') || msgLower.includes('start assessment') || msgLower.includes('take a quiz')) {
+          setAssessmentStep('launcher');
+          setActiveView('assessment');
+        } else if (respLower.includes('opening the admin panel') || msgLower.includes('open admin')) {
+          setActiveView('admin');
+        } else if (msgLower.includes('show career') || msgLower.includes('career explorer')) {
+          setActiveView('career');
+        } else if (msgLower.includes('academic plan') || msgLower.includes('my roadmap')) {
+          setActiveView('academic');
+        }
       })
       .catch(err => {
         console.error("Chat Error:", err);
@@ -134,6 +156,7 @@ const Dashboard = ({ onLogout }) => {
         onLogout={onLogout}
         onProfileClick={() => setActiveView('profile')}
         onPreferencesClick={() => setActiveView('settings')}
+        onAboutClick={() => setActiveView('about')}
       />
 
       <div className="dashboard-container">
@@ -173,6 +196,8 @@ const Dashboard = ({ onLogout }) => {
             <AdminDashboard onBack={() => setActiveView('chat')} />
           ) : activeView === 'assessment' ? (
             renderAssessmentView()
+          ) : activeView === 'about' ? (
+            <About onBack={() => setActiveView('chat')} />
           ) : (
             <div className="placeholder-view">Feature coming soon</div>
           )}

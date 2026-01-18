@@ -1,24 +1,47 @@
 const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const verifyToken = require('../middleware/authMiddleware');
 const router = express.Router();
-const usersFilePath = path.join(__dirname, '../data/users.json');
+const verifyToken = require('../middleware/authMiddleware');
+const User = require('../models/User');
 
-const getUsers = () => {
-    if (!fs.existsSync(usersFilePath)) return [];
-    const data = fs.readFileSync(usersFilePath);
-    return JSON.parse(data);
-};
+router.get('/profile', verifyToken, async (req, res) => {
+    try {
+        const user = await User.findById(req.userId).select('-password');
+        if (!user) {
+            return res.status(404).send({ message: 'User not found' });
+        }
+        res.send(user);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send({ message: 'Error fetching profile' });
+    }
+});
 
-router.get('/profile', verifyToken, (req, res) => {
-    const users = getUsers();
-    const user = users.find(u => u.id === req.userId);
-    if (!user) return res.status(404).send({ message: 'User not found' });
+// Update Profile Route
+router.put('/profile', verifyToken, async (req, res) => {
+    const { firstName, lastName, studentId, program } = req.body;
 
-    // Don't send password
-    const { password, ...userProfile } = user;
-    res.send(userProfile);
+    try {
+        const user = await User.findById(req.userId);
+
+        if (!user) {
+            return res.status(404).send({ message: 'User not found' });
+        }
+
+        user.firstName = firstName || user.firstName;
+        user.lastName = lastName || user.lastName;
+        user.studentId = studentId || user.studentId;
+        user.program = program || user.program;
+
+        await user.save();
+
+        const userResponse = user.toObject();
+        delete userResponse.password;
+
+        res.send(userResponse);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send({ message: 'Error updating profile' });
+    }
 });
 
 module.exports = router;

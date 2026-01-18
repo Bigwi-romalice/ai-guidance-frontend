@@ -1,35 +1,113 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import './InputBox.css';
 
 const InputBox = ({ value, onChange, onSend }) => {
+  const [isRecording, setIsRecording] = useState(false);
+  const [attachedFile, setAttachedFile] = useState(null);
+  const fileInputRef = useRef(null);
+  const recognitionRef = useRef(null);
+
   const handleKeyPress = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      onSend(value);
+      handleSubmit();
     }
   };
 
+  const handleVoiceInput = () => {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+      alert("Your browser does not support speech recognition. Try Chrome or Edge.");
+      return;
+    }
+
+    if (isRecording) {
+      recognitionRef.current?.stop();
+      setIsRecording(false);
+      return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.lang = 'en-US';
+
+    recognition.onstart = () => setIsRecording(true);
+    recognition.onend = () => setIsRecording(false);
+    recognition.onerror = (event) => {
+      console.error('Speech recognition error:', event.error);
+      setIsRecording(false);
+    };
+
+    recognition.onresult = (event) => {
+      const transcript = event.results[0][0].transcript;
+      onChange(value ? `${value} ${transcript}` : transcript);
+    };
+
+    recognitionRef.current = recognition;
+    recognition.start();
+  };
+
+  const handleFileClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setAttachedFile(file);
+    }
+  };
+
+  const removeFile = () => {
+    setAttachedFile(null);
+    if (fileInputRef.current) fileInputRef.current.value = '';
+  };
+
   const handleSubmit = () => {
-    onSend(value);
+    if (!value.trim() && !attachedFile) return;
+    onSend(value, attachedFile);
+    setAttachedFile(null);
   };
 
   return (
     <div className="input-box">
+      {attachedFile && (
+        <div className="file-preview">
+          <span className="file-name">📎 {attachedFile.name}</span>
+          <button onClick={removeFile} className="remove-file-btn">×</button>
+        </div>
+      )}
       <div className="input-container">
-        <button className="icon-button" title="Attach file">
+        <button
+          className="icon-button"
+          title="Attach file"
+          onClick={handleFileClick}
+        >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
           </svg>
         </button>
+        <input
+          type="file"
+          ref={fileInputRef}
+          style={{ display: 'none' }}
+          onChange={handleFileChange}
+        />
         <textarea
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          onKeyPress={handleKeyPress}
+          onKeyDown={handleKeyPress}
           placeholder="Ask about courses, careers, or learning paths..."
           rows="1"
           className="message-input"
         />
-        <button className="icon-button" title="Voice input">
+        <button
+          className={`icon-button ${isRecording ? 'recording' : ''}`}
+          title="Voice input"
+          onClick={handleVoiceInput}
+        >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
             <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
@@ -40,7 +118,7 @@ const InputBox = ({ value, onChange, onSend }) => {
         <button
           onClick={handleSubmit}
           className="send-button"
-          disabled={!value.trim()}
+          disabled={!value.trim() && !attachedFile}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <line x1="22" y1="2" x2="11" y2="13"></line>

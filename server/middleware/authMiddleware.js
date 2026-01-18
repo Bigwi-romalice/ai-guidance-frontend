@@ -4,11 +4,13 @@ const verifyToken = (req, res, next) => {
     const token = req.headers['authorization']?.split(' ')[1];
 
     if (!token) {
+        console.warn('[AUTH] No token provided in headers');
         return res.status(403).send({ message: 'No token provided!' });
     }
 
     jwt.verify(token, 'secret-key', (err, decoded) => {
         if (err) {
+            console.error('[AUTH] Token verification failed:', err.message);
             return res.status(401).send({ message: 'Unauthorized!' });
         }
         req.userId = decoded.id;

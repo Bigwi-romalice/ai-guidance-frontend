@@ -1,57 +1,63 @@
 const express = require('express');
-const fs = require('fs');
-const path = require('path');
 const jwt = require('jsonwebtoken');
+const User = require('../models/User');
 
 const router = express.Router();
-const usersFilePath = path.join(__dirname, '../data/users.json');
+const secretKey = process.env.JWT_SECRET || 'secret-key';
 
-const getUsers = () => {
-    if (!fs.existsSync(usersFilePath)) return [];
-    const data = fs.readFileSync(usersFilePath);
-    return JSON.parse(data);
-};
-
-const saveUsers = (users) => {
-    fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
-};
-
-router.post('/register', (req, res) => {
+router.post('/register', async (req, res) => {
     const { firstName, lastName, email, password, studentId, program } = req.body;
-    const users = getUsers();
 
-    if (users.find(u => u.email === email)) {
-        return res.status(400).send({ message: 'Email already exists' });
+    try {
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+            return res.status(400).send({ message: 'Email already exists' });
+        }
+
+        const newUser = new User({
+            firstName,
+            lastName,
+            email,
+            password, // In a real app, hash this!
+            studentId,
+            program
+        });
+
+        await newUser.save();
+
+        const token = jwt.sign({ id: newUser._id }, secretKey, { expiresIn: '24h' });
+
+        const userResponse = newUser.toObject();
+        delete userResponse.password;
+
+        res.status(201).send({ token, user: userResponse });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send({ message: 'Server error during registration' });
     }
-
-    const newUser = {
-        id: Date.now().toString(),
-        firstName,
-        lastName,
-        email,
-        password, // In a real app, hash this!
-        studentId,
-        program
-    };
-
-    users.push(newUser);
-    saveUsers(users);
-
-    const token = jwt.sign({ id: newUser.id }, 'secret-key', { expiresIn: '24h' });
-    res.send({ token, user: newUser });
 });
 
-router.post('/login', (req, res) => {
+// Login Route
+router.post('/login', async (req, res) => {
     const { email, password } = req.body;
-    const users = getUsers();
-    const user = users.find(u => u.email === email && u.password === password);
 
-    if (!user) {
-        return res.status(401).send({ message: 'Invalid credentials' });
+    try {
+        const user = await User.findOne({ email });
+
+        if (!user || user.password !== password) { // In a real app, compare hashed passwords
+            return res.status(401).send({ message: 'Invalid email or password' });
+        }
+
+        const token = jwt.sign({ id: user._id }, secretKey, { expiresIn: '24h' });
+
+        const userResponse = user.toObject();
+        delete userResponse.password;
+
+        res.send({ user: userResponse, token });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send({ message: 'Server error during login' });
     }
-
-    const token = jwt.sign({ id: user.id }, 'secret-key', { expiresIn: '24h' });
-    res.send({ token, user });
 });
 
 const emailService = require('../services/emailService');

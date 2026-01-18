@@ -1,100 +1,158 @@
 [
-    {
-        "id": "1",
-        "intent": "career",
-        "keywords": [
-            "career",
-            "job",
-            "internship",
-            "work",
-            "employment"
-        ],
-        "response": "I can help you explore various career paths and internships! You can also use the Career Explorer tool in the sidebar for a detailed view.",
-        "category": "Career"
-    },
-    {
-        "id": "2",
-        "intent": "graduation",
-        "keywords": [
-            "graduation",
-            "requirement",
-            "credits",
-            "graduate"
-        ],
-        "response": "For most programs like Computer Science, graduation requires 120 credits total, including 45 upper-level credits and a minimum 2.0 GPA. Check the 'Policies' tab in Academic Guidance for details!",
-        "category": "Academic"
-    },
-    {
-        "id": "3",
-        "intent": "prerequisite",
-        "keywords": [
-            "prerequisite",
-            "can i take",
-            "eligibility"
-        ],
-        "response": "Prerequisites vary by course. You can check your eligibility in the 'Prerequisites' tab of the Academic Guidance module. It will flag any missing requirements!",
-        "category": "Academic"
-    },
-    {
-        "id": "4",
-        "intent": "roadmap",
-        "keywords": [
-            "roadmap",
-            "semester",
-            "plan",
-            "schedule"
-        ],
-        "response": "I can definitely show you a roadmap! Head over to the 'Roadmap' tab in Academic Guidance to see your semester-by-semester plan.",
-        "category": "Academic"
-    },
-    {
-        "id": "5",
-        "intent": "gpa",
-        "keywords": [
-            "gpa",
-            "calculate",
-            "grades",
-            "score"
-        ],
-        "response": "You can estimate your semester GPA using our GPA Calculator! It's located under the 'GPA' tab in Academic Guidance.",
-        "category": "Academic"
-    },
-    {
-        "id": "6",
-        "intent": "python",
-        "keywords": [
-            "python",
-            "learn",
-            "programming",
-            "code"
-        ],
-        "response": "To start learning Python, I recommend the 'Python for Everybody' series in the Learning Hub. It's perfect for beginners!",
-        "category": "Learning"
-    },
-    {
-        "id": "7",
-        "intent": "dark_mode",
-        "keywords": [
-            "dark mode",
-            "theme",
-            "preference",
-            "settings",
-            "appearance"
-        ],
-        "response": "You can toggle Dark Mode and manage other preferences in the 'Preferences' section. Just click your avatar to find it!",
-        "category": "General"
-    },
-    {
-        "id": "8",
-        "intent": "profile",
-        "keywords": [
-            "profile",
-            "photo",
-            "avatar",
-            "account",
-            "details"
-        ],
-        "response": "You can view and edit your profile details in the 'User Profile' section. Click your avatar to access it.",
-        "category": "General"
-    }
+  {
+    "id": "1",
+    "intent": "career",
+    "keywords": [
+      "career",
+      "job",
+      "internship",
+      "work",
+      "employment"
+    ],
+    "response": "I can help you explore various career paths and internships! You can also use the Career Explorer tool in the sidebar for a detailed view.",
+    "category": "Career"
+  },
+  {
+    "id": "2",
+    "intent": "graduation",
+    "keywords": [
+      "graduation",
+      "requirement",
+      "credits",
+      "graduate",
+      "advisory",
+      "guidance",
+      "advisor",
+      "academic"
+    ],
+    "response": "For most programs like Computer Science, graduation requires 120 credits total, including 45 upper-level credits and a minimum 2.0 GPA. Check the 'Policies' tab in Academic Guidance for details!",
+    "category": "Academic"
+  },
+  {
+    "id": "3",
+    "intent": "prerequisite",
+    "keywords": [
+      "prerequisite",
+      "can i take",
+      "eligibility"
+    ],
+    "response": "Prerequisites vary by course. You can check your eligibility in the 'Prerequisites' tab of the Academic Guidance module. It will flag any missing requirements!",
+    "category": "Academic"
+  },
+  {
+    "id": "4",
+    "intent": "roadmap",
+    "keywords": [
+      "roadmap",
+      "semester",
+      "plan",
+      "schedule"
+    ],
+    "response": "I can definitely show you a roadmap! Head over to the 'Roadmap' tab in Academic Guidance to see your semester-by-semester plan.",
+    "category": "Academic"
+  },
+  {
+    "id": "5",
+    "intent": "gpa",
+    "keywords": [
+      "gpa",
+      "calculate",
+      "grades",
+      "score"
+    ],
+    "response": "You can estimate your semester GPA using our GPA Calculator! It's located under the 'GPA' tab in Academic Guidance.",
+    "category": "Academic"
+  },
+  {
+    "id": "6",
+    "intent": "python",
+    "keywords": [
+      "python",
+      "learn",
+      "programming",
+      "code"
+    ],
+    "response": "To start learning Python, I recommend the 'Python for Everybody' series in the Learning Hub. It's perfect for beginners!",
+    "category": "Learning"
+  },
+  {
+    "id": "7",
+    "intent": "dark_mode",
+    "keywords": [
+      "dark mode",
+      "theme",
+      "preference",
+      "settings",
+      "appearance"
+    ],
+    "response": "You can toggle Dark Mode and manage other preferences in the 'Preferences' section. Just click your avatar to find it!",
+    "category": "General"
+  },
+  {
+    "id": "8",
+    "intent": "profile",
+    "keywords": [
+      "profile",
+      "photo",
+      "avatar",
+      "account",
+      "details"
+    ],
+    "response": "You can view and edit your profile details in the 'User Profile' section. Click your avatar to access it.",
+    "category": "General"
+  },
+  {
+    "id": "9",
+    "intent": "academic_guidance",
+    "keywords": [
+      "academic guidance",
+      "academic advisory",
+      "advising",
+      "help me with my studies",
+      "planning"
+    ],
+    "response": "I can help with academic guidance! I can show you your roadmap, calculate your GPA, or check course prerequisites. Just ask specifically about one of those, or use the 'Academic Guidance' module in the sidebar.",
+    "category": "Academic"
+  },
+  {
+    "id": "10",
+    "intent": "analytics",
+    "keywords": [
+      "analytics",
+      "dashboard",
+      "stats",
+      "statistics",
+      "performance",
+      "usage"
+    ],
+    "response": "I'm opening the Analytics Dashboard for you! Here you can see usage statistics and academic trends.",
+    "category": "Admin"
+  },
+  {
+    "id": "11",
+    "intent": "assessment",
+    "keywords": [
+      "assessment",
+      "quiz",
+      "test",
+      "career quiz",
+      "evaluate",
+      "aptitude"
+    ],
+    "response": "Let's start an assessment! I'm opening the Assessment tool where you can take quizzes to help guide your career and academic path.",
+    "category": "Academic"
+  },
+  {
+    "id": "12",
+    "intent": "admin",
+    "keywords": [
+      "admin",
+      "panel",
+      "management",
+      "kb management",
+      "unresolved"
+    ],
+    "response": "Opening the Admin Panel. This is where you can manage the Knowledge Base and review student feedback.",
+    "category": "Admin"
+  }
 ]

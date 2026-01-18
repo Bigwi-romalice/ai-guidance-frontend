@@ -3,8 +3,10 @@ import { useAuth } from '../context/AuthContext';
 import './UserProfile.css';
 
 const UserProfile = ({ onBack }) => {
-    const { user } = useAuth();
+    const { user, updateProfile } = useAuth();
     const [isEditing, setIsEditing] = useState(false);
+    const [isSaving, setIsSaving] = useState(false);
+    const [message, setMessage] = useState({ type: '', text: '' });
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -23,11 +25,20 @@ const UserProfile = ({ onBack }) => {
         }
     }, [user]);
 
-    const handleSave = () => {
-        // Here we would typically call an API to update the user
-        // For now, we'll just toggle edit mode off
-        setIsEditing(false);
-        // show success message logic could go here
+    const handleSave = async () => {
+        setIsSaving(true);
+        setMessage({ type: '', text: '' });
+
+        const result = await updateProfile(formData);
+
+        setIsSaving(false);
+        if (result.success) {
+            setIsEditing(false);
+            setMessage({ type: 'success', text: 'Profile updated successfully!' });
+            setTimeout(() => setMessage({ type: '', text: '' }), 3000);
+        } else {
+            setMessage({ type: 'error', text: result.error || 'Failed to update profile' });
+        }
     };
 
     return (
@@ -42,6 +53,12 @@ const UserProfile = ({ onBack }) => {
                     <div className="avatar-large">
                         {formData.firstName ? formData.firstName[0].toUpperCase() : 'U'}
                     </div>
+
+                    {message.text && (
+                        <div className={`profile-message ${message.type}`}>
+                            {message.text}
+                        </div>
+                    )}
 
                     {!isEditing ? (
                         <div className="profile-details">
@@ -58,6 +75,7 @@ const UserProfile = ({ onBack }) => {
                                     type="text"
                                     value={formData.firstName}
                                     onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                                    disabled={isSaving}
                                 />
                             </div>
                             <div className="form-group">
@@ -66,11 +84,24 @@ const UserProfile = ({ onBack }) => {
                                     type="text"
                                     value={formData.lastName}
                                     onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                                    disabled={isSaving}
                                 />
                             </div>
                             <div className="user-actions">
-                                <button className="save-btn" onClick={handleSave}>Save Changes</button>
-                                <button className="cancel-btn" onClick={() => setIsEditing(false)}>Cancel</button>
+                                <button
+                                    className="save-btn"
+                                    onClick={handleSave}
+                                    disabled={isSaving}
+                                >
+                                    {isSaving ? 'Saving...' : 'Save Changes'}
+                                </button>
+                                <button
+                                    className="cancel-btn"
+                                    onClick={() => setIsEditing(false)}
+                                    disabled={isSaving}
+                                >
+                                    Cancel
+                                </button>
                             </div>
                         </div>
                     )}

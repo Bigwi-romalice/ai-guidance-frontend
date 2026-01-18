@@ -1,0 +1,122 @@
+.about-container {
+    flex: 1;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    overflow-y: auto;
+    height: 700px;
+}
+
+.about-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-section {
+    margin-bottom: 3rem;
+}
+
+.about-section h3 {
+    font-size: 2rem;
+    color: #111827;
+    margin-bottom: 1rem;
+}
+
+.mission {
+    font-style: italic;
+    color: #4b5563;
+    padding-left: 1rem;
+    border-left: 4px solid #6366f1;
+    margin-top: 1.5rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.feature-card {
+    background: #f9fafb;
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: transform 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: #f3f4f6;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h4 {
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.technology-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2.5rem;
+    border-radius: 16px;
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.technology-section h3 {
+    color: white;
+}
+
+.about-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e7eb;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.legal-links h4 {
+    margin-bottom: 1rem;
+}
+
+.legal-links a {
+    display: block;
+    color: #6366f1;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.legal-links a:hover {
+    text-decoration: underline;
+}
+
+.developer-info {
+    text-align: right;
+}
+
+.developer-info p {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
