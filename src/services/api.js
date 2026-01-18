@@ -1,5 +1,6 @@
 // API Configuration and Service Layer
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://kecs-ai-backend.onrender.com/api';
+//'http://localhost:5000/api';
 
 class ApiService {
   constructor() {
