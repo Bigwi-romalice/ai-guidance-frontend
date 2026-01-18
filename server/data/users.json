@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1768660501374",
+    "firstName": "Romalice",
+    "lastName": "Bigwi",
+    "email": "bigwiromalice7@gmail.com",
+    "password": "drake@#7",
+    "studentId": "25508",
+    "program": "IT",
+    "role": "admin"
+  },
+  {
+    "id": "1768667947598",
+    "firstName": "kagabo",
+    "lastName": "alex",
+    "email": "bigwiromalice2000@gmail.com",
+    "password": "drake@#7",
+    "studentId": "25508",
+    "program": "IT",
+    "role": "student"
+  }
+]

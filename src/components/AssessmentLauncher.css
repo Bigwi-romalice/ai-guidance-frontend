@@ -1,0 +1,80 @@
+.assessment-launcher {
+    padding: 2rem;
+    color: var(--text-primary);
+    flex: 1;
+}
+
+.assessment-launcher h2 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.launcher-header {
+    margin-bottom: 1.5rem;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: var(--primary-color, #667eea);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0;
+}
+
+.assessment-launcher p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.assessment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.assessment-card {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.assessment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.assessment-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.assessment-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.start-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: opacity 0.2s;
+}
+
+.start-btn:hover {
+    opacity: 0.9;
+}

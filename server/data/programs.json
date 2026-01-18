@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "name": "B.Sc. Computer Science",
+        "duration": "4 Years",
+        "credits": 120,
+        "description": "Comprehensive program covering...",
+        "courses": [
+            "Intro to CS",
+            "Data Structures",
+            "Algorithms"
+        ]
+    },
+    {
+        "id": "2",
+        "name": "B.Sc. Software Engineering",
+        "duration": "4 Years",
+        "credits": 120,
+        "description": "Focuses on software development lifecycle...",
+        "courses": [
+            "Software Design",
+            "Testing",
+            "Project Management"
+        ]
+    }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1768668875847",
+    "userId": "1768667947598",
+    "assessmentId": "riasec-p1",
+    "date": "2026-01-17T16:54:35.847Z",
+    "scores": {
+      "Realistic": 2,
+      "Investigative": 2,
+      "Artistic": 2,
+      "Social": 2,
+      "Enterprising": 2,
+      "Conventional": 2
+    },
+    "topCategory": "Conventional",
+    "recommendations": []
+  },
+  {
+    "id": "1768669601134",
+    "userId": "1768667947598",
+    "assessmentId": "riasec-p1",
+    "date": "2026-01-17T17:06:41.134Z",
+    "scores": {
+      "Realistic": 1,
+      "Investigative": 2,
+      "Artistic": 1,
+      "Social": 2,
+      "Enterprising": 1,
+      "Conventional": 2
+    },
+    "topCategory": "Conventional",
+    "recommendations": []
+  },
+  {
+    "id": "1768678625167",
+    "userId": "1768660501374",
+    "assessmentId": "riasec-p1",
+    "date": "2026-01-17T19:37:05.167Z",
+    "scores": {
+      "Realistic": 2,
+      "Investigative": 2,
+      "Artistic": 2,
+      "Social": 2,
+      "Enterprising": 2,
+      "Conventional": 2
+    },
+    "topCategory": "Conventional",
+    "recommendations": []
+  }
+]

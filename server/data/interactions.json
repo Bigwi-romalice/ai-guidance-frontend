@@ -1,0 +1,156 @@
+[
+  {
+    "id": "1768675827035",
+    "timestamp": "2026-01-17T18:50:27.035Z",
+    "userId": "1768667947598",
+    "program": "IT",
+    "userMessage": "How do I calculate my GPA?",
+    "botResponse": "I'm not sure how to help with that yet.",
+    "topic": "general",
+    "sentiment": "Neutral",
+    "resolved": false
+  },
+  {
+    "id": "1768675849987",
+    "timestamp": "2026-01-17T18:50:49.987Z",
+    "userId": "1768667947598",
+    "program": "IT",
+    "userMessage": "How do I calculate my GPA?",
+    "botResponse": "I'm not sure how to help with that yet.",
+    "topic": "general",
+    "sentiment": "Neutral",
+    "resolved": false
+  },
+  {
+    "id": "1768675861766",
+    "timestamp": "2026-01-17T18:51:01.766Z",
+    "userId": "1768667947598",
+    "program": "IT",
+    "userMessage": "What are the requirements for Computer Science?",
+    "botResponse": "I'm not sure how to help with that yet.",
+    "topic": "general",
+    "sentiment": "Neutral",
+    "resolved": false
+  },
+  {
+    "id": "1768676331498",
+    "timestamp": "2026-01-17T18:58:51.498Z",
+    "userId": "1768660501374",
+    "program": "IT",
+    "userMessage": "how do i have to calculate my GPA",
+    "botResponse": "You can estimate your semester GPA using our GPA Calculator! It's located under the 'GPA' tab in Academic Guidance.",
+    "topic": "academic",
+    "sentiment": "Neutral",
+    "resolved": true
+  },
+  {
+    "id": "1768676382588",
+    "timestamp": "2026-01-17T18:59:42.589Z",
+    "userId": "1768660501374",
+    "program": "IT",
+    "userMessage": "What are the requirements for Computer Science?",
+    "botResponse": "For most programs like Computer Science, graduation requires 120 credits total, including 45 upper-level credits and a minimum 2.0 GPA. Check the 'Policies' tab in Academic Guidance for details!",
+    "topic": "academic",
+    "sentiment": "Neutral",
+    "resolved": true
+  },
+  {
+    "id": "1768676457188",
+    "timestamp": "2026-01-17T19:00:57.188Z",
+    "userId": "1768660501374",
+    "program": "IT",
+    "userMessage": "Can I turn on dark mode?",
+    "botResponse": "I'm not sure how to help with that yet.",
+    "topic": "general",
+    "sentiment": "Neutral",
+    "resolved": false
+  },
+  {
+    "id": "1768676470681",
+    "timestamp": "2026-01-17T19:01:10.681Z",
+    "userId": "1768660501374",
+    "program": "IT",
+    "userMessage": "How do I change my profile photo?",
+    "botResponse": "I'm not sure how to help with that yet.",
+    "topic": "general",
+    "sentiment": "Neutral",
+    "resolved": false
+  },
+  {
+    "id": "1768676485535",
+    "timestamp": "2026-01-17T19:01:25.535Z",
+    "userId": "1768660501374",
+    "program": "IT",
+    "userMessage": "Where can I learn Python?",
+    "botResponse": "To start learning Python, I recommend the 'Python for Everybody' series in the Learning Hub. It's perfect for beginners!",
+    "topic": "learning",
+    "sentiment": "Neutral",
+    "resolved": true
+  },
+  {
+    "id": "1768676505965",
+    "timestamp": "2026-01-17T19:01:45.966Z",
+    "userId": "1768660501374",
+    "program": "IT",
+    "userMessage": "Find me some internships in software development",
+    "botResponse": "Hello! I am your AI Academic & Career Assistant. How can I help you today?",
+    "topic": "general",
+    "sentiment": "Neutral",
+    "resolved": true
+  },
+  {
+    "id": "1768676520460",
+    "timestamp": "2026-01-17T19:02:00.460Z",
+    "userId": "1768660501374",
+    "program": "IT",
+    "userMessage": "What kind of jobs can I get with an IT degree?",
+    "botResponse": "I can help you explore various career paths! You can also use the Career Explorer tool in the sidebar for a detailed view.",
+    "topic": "career",
+    "sentiment": "Neutral",
+    "resolved": true
+  },
+  {
+    "id": "1768676541240",
+    "timestamp": "2026-01-17T19:02:21.240Z",
+    "userId": "1768660501374",
+    "program": "IT",
+    "userMessage": "How do I calculate my GPA?",
+    "botResponse": "You can estimate your semester GPA using our GPA Calculator! It's located under the 'GPA' tab in Academic Guidance.",
+    "topic": "academic",
+    "sentiment": "Neutral",
+    "resolved": true
+  },
+  {
+    "id": "1768676558230",
+    "timestamp": "2026-01-17T19:02:38.230Z",
+    "userId": "1768660501374",
+    "program": "IT",
+    "userMessage": "Can I take Advanced Machine Learning?",
+    "botResponse": "Prerequisites vary by course. You can check your eligibility in the 'Prerequisites' tab of the Academic Guidance module. It will flag any missing requirements!",
+    "topic": "academic",
+    "sentiment": "Neutral",
+    "resolved": true
+  },
+  {
+    "id": "1768676680725",
+    "timestamp": "2026-01-17T19:04:40.725Z",
+    "userId": "1768660501374",
+    "program": "IT",
+    "userMessage": "Find me some internships in software development",
+    "botResponse": "Hello! I am your AI Academic & Career Assistant. How can I help you today?",
+    "topic": "general",
+    "sentiment": "Neutral",
+    "resolved": true
+  },
+  {
+    "id": "1768676691200",
+    "timestamp": "2026-01-17T19:04:51.200Z",
+    "userId": "1768660501374",
+    "program": "IT",
+    "userMessage": "What kind of jobs can I get with an IT degree?",
+    "botResponse": "I can help you explore various career paths! You can also use the Career Explorer tool in the sidebar for a detailed view.",
+    "topic": "career",
+    "sentiment": "Neutral",
+    "resolved": true
+  }
+]

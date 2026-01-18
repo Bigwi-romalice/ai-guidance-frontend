@@ -1,0 +1,69 @@
+[
+    {
+        "id": "riasec-p1",
+        "title": "Career Interest Assessment",
+        "description": "Discover your personality type and get career recommendations based on the RIASEC model.",
+        "questions": [
+            {
+                "id": 1,
+                "text": "I like to work with cars and machinery.",
+                "category": "Realistic"
+            },
+            {
+                "id": 2,
+                "text": "I like to do puzzles and solve problems.",
+                "category": "Investigative"
+            },
+            {
+                "id": 3,
+                "text": "I am good at art, music, or writing.",
+                "category": "Artistic"
+            },
+            {
+                "id": 4,
+                "text": "I like to help people and do volunteer work.",
+                "category": "Social"
+            },
+            {
+                "id": 5,
+                "text": "I like to lead teams and persuade others.",
+                "category": "Enterprising"
+            },
+            {
+                "id": 6,
+                "text": "I like to organize data and keep records.",
+                "category": "Conventional"
+            },
+            {
+                "id": 7,
+                "text": "I enjoy building things with my hands.",
+                "category": "Realistic"
+            },
+            {
+                "id": 8,
+                "text": "I enjoy analyzing science or math problems.",
+                "category": "Investigative"
+            },
+            {
+                "id": 9,
+                "text": "I enjoy creative activities like painting or acting.",
+                "category": "Artistic"
+            },
+            {
+                "id": 10,
+                "text": "I enjoy teaching or training others.",
+                "category": "Social"
+            },
+            {
+                "id": 11,
+                "text": "I enjoy selling products or ideas.",
+                "category": "Enterprising"
+            },
+            {
+                "id": 12,
+                "text": "I enjoy following clear procedures and rules.",
+                "category": "Conventional"
+            }
+        ]
+    }
+]

@@ -1,0 +1,100 @@
+[
+    {
+        "id": "1",
+        "intent": "career",
+        "keywords": [
+            "career",
+            "job",
+            "internship",
+            "work",
+            "employment"
+        ],
+        "response": "I can help you explore various career paths and internships! You can also use the Career Explorer tool in the sidebar for a detailed view.",
+        "category": "Career"
+    },
+    {
+        "id": "2",
+        "intent": "graduation",
+        "keywords": [
+            "graduation",
+            "requirement",
+            "credits",
+            "graduate"
+        ],
+        "response": "For most programs like Computer Science, graduation requires 120 credits total, including 45 upper-level credits and a minimum 2.0 GPA. Check the 'Policies' tab in Academic Guidance for details!",
+        "category": "Academic"
+    },
+    {
+        "id": "3",
+        "intent": "prerequisite",
+        "keywords": [
+            "prerequisite",
+            "can i take",
+            "eligibility"
+        ],
+        "response": "Prerequisites vary by course. You can check your eligibility in the 'Prerequisites' tab of the Academic Guidance module. It will flag any missing requirements!",
+        "category": "Academic"
+    },
+    {
+        "id": "4",
+        "intent": "roadmap",
+        "keywords": [
+            "roadmap",
+            "semester",
+            "plan",
+            "schedule"
+        ],
+        "response": "I can definitely show you a roadmap! Head over to the 'Roadmap' tab in Academic Guidance to see your semester-by-semester plan.",
+        "category": "Academic"
+    },
+    {
+        "id": "5",
+        "intent": "gpa",
+        "keywords": [
+            "gpa",
+            "calculate",
+            "grades",
+            "score"
+        ],
+        "response": "You can estimate your semester GPA using our GPA Calculator! It's located under the 'GPA' tab in Academic Guidance.",
+        "category": "Academic"
+    },
+    {
+        "id": "6",
+        "intent": "python",
+        "keywords": [
+            "python",
+            "learn",
+            "programming",
+            "code"
+        ],
+        "response": "To start learning Python, I recommend the 'Python for Everybody' series in the Learning Hub. It's perfect for beginners!",
+        "category": "Learning"
+    },
+    {
+        "id": "7",
+        "intent": "dark_mode",
+        "keywords": [
+            "dark mode",
+            "theme",
+            "preference",
+            "settings",
+            "appearance"
+        ],
+        "response": "You can toggle Dark Mode and manage other preferences in the 'Preferences' section. Just click your avatar to find it!",
+        "category": "General"
+    },
+    {
+        "id": "8",
+        "intent": "profile",
+        "keywords": [
+            "profile",
+            "photo",
+            "avatar",
+            "account",
+            "details"
+        ],
+        "response": "You can view and edit your profile details in the 'User Profile' section. Click your avatar to access it.",
+        "category": "General"
+    }
+]

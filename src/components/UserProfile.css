@@ -1,0 +1,126 @@
+.user-profile {
+    flex: 1;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    overflow-y: auto;
+    height: 700px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: #f9fafb;
+    padding: 2rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+}
+
+.avatar-large {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.profile-details h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+}
+
+.profile-program {
+    color: #4b5563;
+    font-weight: 500;
+    margin: 0 0 0.25rem 0;
+}
+
+.profile-year {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin: 0 0 0.25rem 0;
+}
+
+.profile-email {
+    color: #9ca3af;
+    font-size: 0.875rem;
+    margin: 0 0 1rem 0;
+}
+
+.edit-profile-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.info-section {
+    margin-bottom: 2rem;
+}
+
+.info-block {
+    margin-bottom: 1rem;
+}
+
+.info-block label {
+    display: block;
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: #e0e7ff;
+    color: #4f46e5;
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+    font-size: 0.875rem;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 8px;
+    font-size: 0.875rem;
+}
+
+.history-query {
+    color: #374151;
+}
+
+.history-date {
+    color: #9ca3af;
+}

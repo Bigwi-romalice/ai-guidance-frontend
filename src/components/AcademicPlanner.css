@@ -1,0 +1,398 @@
+.academic-planner {
+    flex: 1;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    overflow-y: auto;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+.planner-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1rem;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: #667eea;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding: 0;
+}
+
+.planner-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.tab-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: none;
+    color: #6b7280;
+    font-weight: 600;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.tab-btn.active {
+    color: #667eea;
+    border-bottom-color: #667eea;
+}
+
+.tab-btn:hover {
+    color: #4b5563;
+}
+
+/* Catalog Grid */
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.program-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.2s;
+    background: #f9fafb;
+}
+
+.program-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-color: #667eea;
+}
+
+.program-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.program-card h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.125rem;
+    color: #111827;
+}
+
+.program-degree {
+    color: #667eea;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.program-desc {
+    color: #4b5563;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.program-credits {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-bottom: 1rem;
+}
+
+.view-program-btn {
+    width: 100%;
+    padding: 0.5rem;
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    color: #374151;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.view-program-btn:hover {
+    border-color: #667eea;
+    color: #667eea;
+}
+
+/* Roadmap */
+.timeline-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    overflow-x: auto;
+}
+
+.semester-block {
+    background: #f3f4f6;
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.semester-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+}
+
+.semester-header span:first-child {
+    font-size: 0.75rem;
+    color: #6b7280;
+    text-transform: uppercase;
+}
+
+.semester-title {
+    font-weight: 600;
+    color: #111827;
+}
+
+.courses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.course-item {
+    background: white;
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    color: #374151;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* GPA */
+.gpa-calculator-card {
+    max-width: 400px;
+    background: #f9fafb;
+    padding: 2rem;
+    border-radius: 16px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.gpa-mock-inputs {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.mock-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 0.75rem;
+    border-radius: 8px;
+}
+
+.gpa-result {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gpa-score {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #059669;
+}
+
+.gpa-inputs-container {
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.gpa-row-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    font-weight: 600;
+    color: #6b7280;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    padding: 0 0.5rem;
+}
+
+.gpa-input-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: center;
+    background: white;
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    border: 1px solid #e5e7eb;
+}
+
+.grade-select {
+    padding: 0.4rem;
+    border-radius: 4px;
+    border: 1px solid #d1d5db;
+}
+
+.calculate-btn {
+    background: #059669;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 1rem;
+    transition: background 0.2s;
+}
+
+.calculate-btn:hover {
+    background: #047857;
+}
+
+/* Prerequisites View */
+.prereq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.course-check-card {
+    background: #f9fafb;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+}
+
+.check-status {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.check-status.error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+}
+
+.check-status.success {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #065f46;
+}
+
+.status-icon {
+    font-size: 1.5rem;
+}
+
+.status-text h5 {
+    margin: 0 0 0.25rem 0;
+    font-weight: 700;
+}
+
+.status-text p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Policies View */
+.policy-list {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.policy-item {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.policy-item h4 {
+    margin-top: 0;
+    color: #4b5563;
+}
+
+/* Advisor View */
+.advisor-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 3rem;
+    border-radius: 20px;
+    max-width: 700px;
+    margin: 2rem auto;
+}
+
+.advisor-avatar {
+    font-size: 4rem;
+    background: rgba(255, 255, 255, 0.2);
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.advisor-info h4 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.advisor-role {
+    opacity: 0.9;
+    margin: 0.5rem 0;
+}
+
+.advisor-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.contact-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.contact-btn.primary {
+    background: white;
+    color: #667eea;
+}
+
+.contact-btn.secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+}

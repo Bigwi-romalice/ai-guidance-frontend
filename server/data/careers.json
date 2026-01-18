@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "title": "Software Engineer",
+        "description": "Develops software solutions...",
+        "salary": "$80,000 - $150,000",
+        "growth": "22% (Much faster than average)",
+        "skills": [
+            "JavaScript",
+            "Python",
+            "React",
+            "Node.js"
+        ],
+        "match": 95
+    },
+    {
+        "id": "2",
+        "title": "Data Scientist",
+        "description": "Analyzes complex data...",
+        "salary": "$90,000 - $160,000",
+        "growth": "31% (Much faster than average)",
+        "skills": [
+            "Python",
+            "Machine Learning",
+            "Statistics",
+            "SQL"
+        ],
+        "match": 88
+    }
+]
